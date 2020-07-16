@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herbaceous Flash Cards</title>
+    <link rel="stylesheet" href="style.css"/>
+
+</head>
+<body>
+    <main>
+    <h1 class="" id="header"> 
+        Herbaceous Flash Cards 
+    </h1>
+    <h2 class="" id="upperInstructions"> 
+        Guess the therapeutic function of the plant:
+    </h2>
+    <div id="holdButtons">
+    <span >
+        <button class="" id="backButton" > <= Previous Card</button>
+    <!-- </span> -->
+    <!-- <span id="forwardButton"> -->
+        <button class="" id="forwardButton"> Next Card => </button>
+    </span>
+    </div>
+    <h2 class="text" id="lowerInstructions">
+        ( Hover over the card to flip it. )
+    </h2>
+<div class="flip-card">
+    <div class="flip-card-inner">
+        <div class="flip-card-front">
+            <!-- Insert text for front of card -->
+            <p id="antFlashcardText"></p>
+        </div>
+        <div class="flip-card-back">
+            <!-- Insert text for back of card -->
+            <p id="postFlashcardText"> Hello world </p>
+        </div>
+    </div>
+</div>    
+    <div class="holdStartOver" id="resetButtonBox">
+        <button class="" id="resetButton">Start Over!
+        </button>
+    </div>
+    <div id="modal">
+        <div id="modal-textbox">
+        <a id="close" href="#">
+            <!-- <div id="modal-footer"> -->
+            <!-- <a id="close" href="#">Close</a>
+                </div> -->
+            <h3> You've reached the end of the flashcard set!</h3>
+        </a>
+        </div>
+    </div>
+    </main>
+    <script type="application/javascript" src="script4.js">
+    </script>
+</body>
+</html>
