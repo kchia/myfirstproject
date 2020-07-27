@@ -17,11 +17,8 @@ document.getElementById("postFlashcardText").innerText = cardData[cardIndex][1];
 // //add an event listener to the card, listening for a click
 let card = document.getElementsByClassName("flip-card");
 
-// card.addEventListener('mouseover', flipCard);
-
 //when the card is clicked, display the back of the card
 function flipCard(event) {
-	// event.target.
 	document.getElementsByClassName('antFlashcardText').innerText =
 		cardData[cardIndex][1];
 	
@@ -50,9 +47,12 @@ back.addEventListener('click', handleBack);
 function handleBack() {
 	if (cardIndex < cardData.length) {
 		cardIndex--;
-		document.getElementById("antFlashcardText").innerText = cardData[cardIndex][0];
-		document.getElementById('postFlashcardText').innerText =
-			cardData[cardIndex][1];
+		// Hou comment: Line 51 should fix the error described in the feedback. Why?
+		if (cardIndex >= 0) {
+			document.getElementById("antFlashcardText").innerText = cardData[cardIndex][0];
+			document.getElementById('postFlashcardText').innerText =
+				cardData[cardIndex][1];
+		}
 	}
 }
 
@@ -62,7 +62,6 @@ function handleBack() {
 const startOver = document.getElementById('resetButton');
 
 //add an event listener for clicking on this button
-// document.getElementById('resetButton');
 startOver.addEventListener('click', resetCard);
 
 // code to execute upon button click
@@ -73,29 +72,3 @@ function resetCard() {
 	document.getElementById('postFlashcardText').innerText =
 		cardData[cardIndex][1];
 }
-
-//Display an "end of flashcard set" notification via modal:
-// Grabbing modal element
-const modal = document.getElementById('modal')
-
-// Grabbing close button
-// const close = document.getElementById('close')
-
-//Add event listener to the last card cardData[2][1]
-// // use a conditional?
-cardData[2][1].addEventListener('click', openModal)
-
-// Function to change modal display to 'block'
-const openModal = () => {
-  modal.style.display = 'block';
-}
-
-//Add event listener to Close button
-// close.addEventListener('click', closeModal)
-
-// Event handler to close the modal
-// const closeModal = () => {
-//   modal.style.display = 'none'
-// }
-
-// setTimeout(closeModal, 5000);
